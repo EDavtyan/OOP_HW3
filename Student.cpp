@@ -4,10 +4,10 @@
 
 #include "Student.h"
 
-int Student::m_count;
+int Student::m_count = 0;
 
 Student::Student(std::string name1, std::string name2, std::string faculty) {
-    idNum = m_count++;
+    idNum = ++m_count;
     m_firrstName = name1;
     m_secondName = name2;
     m_faculty = faculty;
@@ -15,7 +15,7 @@ Student::Student(std::string name1, std::string name2, std::string faculty) {
 }
 
 Student::Student(const Student& p) {
-    idNum = m_count++;
+    idNum = ++m_count;
     m_faculty = p.m_faculty;
     m_id = "AUA_" + p.m_faculty+"_" + std::to_string(idNum);
 }
